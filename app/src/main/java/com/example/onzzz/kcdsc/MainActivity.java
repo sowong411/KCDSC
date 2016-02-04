@@ -15,10 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Get the template Action Bar as our Action Bar
         actionBar = getSupportActionBar();
-
-        //Set the return arrow in the Action Bar
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         //Apply the gradient(漸變色) in the Action Bar
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient_bg));
     }
