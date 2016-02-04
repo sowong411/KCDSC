@@ -1,8 +1,12 @@
 package com.example.onzzz.kcdsc;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
+import com.facebook.login.widget.ProfilePictureView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,5 +21,15 @@ public class MainActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         //Apply the gradient(漸變色) in the Action Bar
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient_bg));
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("Name");
+        String id = intent.getStringExtra("Id");
+
+        ProfilePictureView displayProfilePic = (ProfilePictureView) findViewById(R.id.profilePic);
+        displayProfilePic.setProfileId(id);
+
+        TextView displayName = (TextView) findViewById(R.id.userName);
+        displayName.setText(name);
     }
 }
