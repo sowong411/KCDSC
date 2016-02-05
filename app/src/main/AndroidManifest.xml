@@ -16,6 +16,7 @@
             android:value="@string/facebook_app_id"/>
 
         <activity android:name=".MainActivity" ></activity>
+        <activity android:name=".UserInfoActivity"></activity>
 
         <activity android:name=".LoginActivity">
             <intent-filter>
