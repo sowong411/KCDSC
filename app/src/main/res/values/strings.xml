@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MemorVi</string>
     <string name="facebook_app_id">467722626755206</string>
+    <string name="server_client_id">929596988462-466lnjmqp32upug1ipjktpq6i5c0s27j.apps.googleusercontent.com</string>
 </resources>
