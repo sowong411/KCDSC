@@ -7,17 +7,31 @@
         android:id="@+id/login_method"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You are logged in using Facebook."
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"/>
 
-    <com.facebook.login.widget.ProfilePictureView
+    <RelativeLayout
         android:id="@+id/profilePic"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_method"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/login_method" >
+
+        <ImageView
+            android:id="@+id/profilePicFacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/profilePicGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/userName"
@@ -25,7 +39,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/profilePic"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Wong Sui On" />
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>

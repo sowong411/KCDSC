@@ -72,6 +72,8 @@ public class LoginActivity extends AppCompatActivity implements
                 intent.setClass(LoginActivity.this, MainActivity.class);
                 intent.putExtra("Name", profile.getName());
                 intent.putExtra("Id", profile.getId());
+                intent.putExtra("ProfilePicUri", profile.getProfilePictureUri(400,400).toString());
+                intent.putExtra("LoginMethod", "Facebook");
                 startActivity(intent);
             }
 
@@ -128,6 +130,10 @@ public class LoginActivity extends AppCompatActivity implements
             GoogleSignInAccount acct = result.getSignInAccount();
             Intent intent = new Intent();
             intent.setClass(LoginActivity.this, MainActivity.class);
+            intent.putExtra("Name", acct.getDisplayName());
+            intent.putExtra("Id", acct.getId());
+            intent.putExtra("ProfilePicUri", acct.getPhotoUrl().toString());
+            intent.putExtra("LoginMethod", "Google");
             startActivity(intent);
         } else {
 

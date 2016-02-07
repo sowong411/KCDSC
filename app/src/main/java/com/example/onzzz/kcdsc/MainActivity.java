@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final String name = intent.getStringExtra("Name");
         final String id = intent.getStringExtra("Id");
+        final String profilePicUri = intent.getStringExtra("ProfilePicUri");
+        final String loginMethod = intent.getStringExtra("LoginMethod");
 
         //Get the template Action Bar as our Action Bar
         actionBar = getSupportActionBar();
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.setClass(MainActivity.this, UserInfoActivity.class);
                 intent.putExtra("Name", name);
                 intent.putExtra("Id", id);
+                intent.putExtra("ProfilePicUri", profilePicUri);
+                intent.putExtra("LoginMethod", loginMethod);
                 startActivity(intent);
             }
         });
