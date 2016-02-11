@@ -1,6 +1,7 @@
 package com.example.onzzz.kcdsc;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,16 +10,22 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.facebook.login.widget.ProfilePictureView;
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActionBar actionBar;
     private Button displayUserInfoButton;
+    private Button photoUploadButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this); //Can use separate class later to solve the multiple initialization problem
 
         Intent intent = getIntent();
         final String name = intent.getStringExtra("Name");
@@ -44,5 +51,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        photoUploadButton = (Button) findViewById(R.id.photo_upload);
+        photoUploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Just for Testing
+                ParseObject testObject = new ParseObject("TestObject");
+                testObject.put("foo", "bar");
+                testObject.saveInBackground();
+            }
+        });
     }
+
 }
