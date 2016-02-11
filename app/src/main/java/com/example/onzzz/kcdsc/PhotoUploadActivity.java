@@ -92,7 +92,6 @@ public class PhotoUploadActivity extends Activity {
             for (String string : all_path) {
                 CustomGallery item = new CustomGallery();
                 item.sdcardPath = string;
-
                 dataT.add(item);
             }
 

@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this); //Can use separate class later to solve the multiple initialization problem
+        //Parse.enableLocalDatastore(this);
+        //Parse.initialize(this); //Can use separate class later to solve the multiple initialization problem
 
         Intent intent = getIntent();
         final String name = intent.getStringExtra("Name");
