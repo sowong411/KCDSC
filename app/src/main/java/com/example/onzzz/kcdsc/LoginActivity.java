@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity implements
 
     private static final int RC_SIGN_IN = 9001;
 
-    private ActionBar actionBar;
     private LoginButton fbLoginButton;
     private SignInButton gLoginButton;
     private CallbackManager callbackManager;
@@ -48,12 +47,6 @@ public class LoginActivity extends AppCompatActivity implements
         callbackManager = CallbackManager.Factory.create();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        /***************Action Bar***************/
-        //Get the template Action Bar as our Action Bar
-        actionBar = getSupportActionBar();
-        //Apply the gradient(漸變色) in the Action Bar
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient_bg));
 
         /***************Facebook Login Button***************/
         fbLoginButton = (LoginButton) findViewById(R.id.fbLogin);

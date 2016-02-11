@@ -21,8 +21,6 @@ import java.io.InputStream;
  */
 public class UserInfoActivity extends AppCompatActivity {
 
-    private ActionBar actionBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +31,6 @@ public class UserInfoActivity extends AppCompatActivity {
         String id = intent.getStringExtra("Id");
         String profilePicUri = intent.getStringExtra("ProfilePicUri");
         String loginMethod = intent.getStringExtra("LoginMethod");
-
-        //Get the template Action Bar as our Action Bar
-        actionBar = getSupportActionBar();
-        //Apply the gradient(漸變色) in the Action Bar
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient_bg));
 
         TextView loginMethodText = (TextView) findViewById(R.id.login_method);
         if (loginMethod.equals("Facebook")){

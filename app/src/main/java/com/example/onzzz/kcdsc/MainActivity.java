@@ -15,7 +15,6 @@ import com.parse.ParseObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActionBar actionBar;
     private Button displayUserInfoButton;
     private Button photoUploadButton;
 
@@ -32,11 +31,6 @@ public class MainActivity extends AppCompatActivity {
         final String id = intent.getStringExtra("Id");
         final String profilePicUri = intent.getStringExtra("ProfilePicUri");
         final String loginMethod = intent.getStringExtra("LoginMethod");
-
-        //Get the template Action Bar as our Action Bar
-        actionBar = getSupportActionBar();
-        //Apply the gradient(漸變色) in the Action Bar
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient_bg));
 
         displayUserInfoButton = (Button) findViewById(R.id.display_user_info_button);
         displayUserInfoButton.setOnClickListener(new View.OnClickListener() {
@@ -56,10 +50,9 @@ public class MainActivity extends AppCompatActivity {
         photoUploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Just for Testing
-                ParseObject testObject = new ParseObject("TestObject");
-                testObject.put("foo", "bar");
-                testObject.saveInBackground();
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, PhotoUploadActivity.class);
+                startActivity(intent);
             }
         });
     }
